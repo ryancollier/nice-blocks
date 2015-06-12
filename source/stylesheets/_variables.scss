@@ -1,0 +1,27 @@
+//Vars
+
+// Basic media queries Used for grid and typography.
+$medium: 768px;
+$large: 1200px;
+$xlarge: 1400px;
+
+
+//Modular Scale Ratios. Used for grid and typography.
+$ms-ratio-1: 1.333;
+$ms-ratio-2: 1.44;
+$ms-ratio-3: 1.54;
+
+
+// Base Typesize. Used for grid and typography.
+$base-type-size: 1em;
+
+// Font Stacks
+$body-font-stack: "Proxima Nova", sans-serif;
+$heading-font-stack: "Proxima Nova", serif;
+
+//Colors
+$default-type-color: #252525;
+$heading-type-color: #252525;
+
+$link-color: green;
+$link-hover: darken($link-color, 12%);

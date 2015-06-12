@@ -1,0 +1,154 @@
+// Vars
+@import "variables";
+
+
+// Import type tools -- 
+// Modular Scale: http://www.modularscale.com/  & https://github.com/modularscale/modularscale-sass
+// Breakpoint: https://github.com/at-import/breakpoint
+// Type-Heading: https://github.com/ellioseven/type-heading
+@import "modular-scale";
+@import "breakpoint";
+@import "type-heading";
+
+$breakpoint-to-ems: true;
+
+
+// Modular Scale settings
+$ms-base: $base-type-size;
+$ms-ratio: $ms-ratio-1, $ms-ratio-2, $ms-ratio-3;
+
+
+// Heading size map. 
+// Configured as: font-size line-height (margin-top margin-bottom) breakpoint
+// See http://ellioseven.github.io/type-heading/user-guide/#configure-type-heading
+
+$th-headings: (  
+  h1: (
+    ms(6) $ms-ratio-1 (ms(6)/$ms-ratio-1 0px),
+    ms(8) $ms-ratio-2 (ms(8)/$ms-ratio-1 0px) $medium,
+    ms(11) $ms-ratio-2 (ms(11)/$ms-ratio-2 0px) $large
+    ),
+ 
+  h2: (
+    ms(5) $ms-ratio-1 (ms(5)/$ms-ratio-1 0px),
+    ms(7) $ms-ratio-2 (ms(7)/$ms-ratio-1 0px) $medium,
+    ms(9) $ms-ratio-2 (ms(9)/$ms-ratio-2 0px) $large
+    ),
+  
+  h3: (
+    ms(3) $ms-ratio-1 (ms(3)/$ms-ratio-1 0px),
+    ms(5) $ms-ratio-2 (ms(5)/$ms-ratio-1 0px) $medium,
+    ms(7) $ms-ratio-2 (ms(7)/$ms-ratio-1 0px) $large
+
+    ),
+  
+  h4: (
+    ms(2) $ms-ratio-1 (ms(2)/$ms-ratio-1 0px),
+    ms(3) $ms-ratio-2 (ms(3)/$ms-ratio-1 0px) $medium,
+    ms(5) $ms-ratio-2 (ms(5)/$ms-ratio-1 0px) $large
+    ),
+  
+  h5: (
+    ms(1) $ms-ratio-1 (ms(1)/$ms-ratio-1 0px),
+    ms(1) $ms-ratio-2 (ms(1)/$ms-ratio-1 0px) $medium,
+    ms(3) $ms-ratio-2 (ms(3)/$ms-ratio-1 0px) $large
+  ),
+
+  h6: (
+    ms(0) $ms-ratio-1 (ms(0)/$ms-ratio-1 0px),
+    ms(0) $ms-ratio-2 (ms(0)/$ms-ratio-1 0px) $medium,
+    ms(1) $ms-ratio-2 (ms(1)/$ms-ratio-1 0px) $large
+  )
+);
+
+
+.typeset {  // .typeset class sets overall typography on a block. Add that class to any block with typsetting.
+
+  font-size: $base-type-size;
+  color: $default-type-color;
+
+  // This iterates through headings and applies their th-heading values for each
+  // Essentailly h(n) { @include th-headings(h(n)) }
+  @for $index from 1 through 6 {
+    h#{$index} {
+      @include th-headings(h#{$index}); 
+    }
+  }
+
+  // Set the heading type face
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-stack;
+    color: $heading-type-color;
+  }
+
+  // Set the primary type face and vertical rhythm
+  p, ul, ol, blockquote, figcaption {
+
+    font-size: $base-type-size;
+    font-family: $body-font-stack;  
+    line-height: $ms-ratio-1;
+    margin-bottom: $ms-ratio-1;
+    margin-top: $ms-ratio-1;
+     
+      @include breakpoint($medium) {
+        font-size: 1.1em;
+        line-height: $ms-ratio-2;
+        margin-bottom: $ms-ratio-2;
+        margin-top: $ms-ratio-2;
+      }
+
+      @include breakpoint($large) {
+        font-size: 1.2em;
+      }
+  }
+
+
+  // List items are often long, so set set them apart by 1/2 the line height
+  li {
+    margin-bottom: $ms-ratio-1*.5 + em;
+
+    @include breakpoint($medium) {  
+      margin-bottom: $ms-ratio-2*.5 + em;
+    }
+  }
+
+  a {
+    color: $link-color;
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+
+} /* .typeset */
+
+
+//Clean Up Margins
+  div[class*="col-"],
+  div.typeset,
+  div.format { 
+    & > h1:first-child,
+    & > h2:first-child,
+    & > h3:first-child, 
+    & > h4:first-child,
+    & > p,
+    & > ul,
+    & > ol,
+    & > blockquote,
+    li + ul,
+    h1 + p, h2 + p, h3 + p, h4 + p, img {
+
+      margin-top: $base-type-size;
+      
+      @include breakpoint($medium) {
+        margin-top: 1.1em;
+      }
+      
+      @include breakpoint($large) {
+        margin-top: 1.2em;
+      }
+    }
+  }
+
+
+
