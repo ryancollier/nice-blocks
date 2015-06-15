@@ -23,6 +23,12 @@ $ms-ratio: $ms-ratio-1, $ms-ratio-2, $ms-ratio-3;
 // See http://ellioseven.github.io/type-heading/user-guide/#configure-type-heading
 
 $th-headings: (  
+  title: (
+    ms(8) $ms-ratio-1 (ms(6)/$ms-ratio-1 0px),
+    ms(10) $ms-ratio-2 (ms(8)/$ms-ratio-1 0px) $medium,
+    ms(14) $ms-ratio-2 (ms(11)/$ms-ratio-2 0px) $large
+    ),
+
   h1: (
     ms(6) $ms-ratio-1 (ms(6)/$ms-ratio-1 0px),
     ms(8) $ms-ratio-2 (ms(8)/$ms-ratio-1 0px) $medium,
@@ -102,6 +108,18 @@ $th-headings: (
       }
   }
 
+  // Style the blockquotes
+  blockquote {
+    font-style: italic;
+    border-left: 2px solid $quiet-type-color;
+    padding-left: 1rem;
+    margin-left: 1.3rem;
+  }
+
+  // Left align lists
+  ul, ol {
+      padding-left: 1.3rem;
+  }
 
   // List items are often long, so set set them apart by 1/2 the line height
   li {
@@ -112,6 +130,7 @@ $th-headings: (
     }
   }
 
+  // In text hyperlinks
   a {
     color: $link-color;
     &:hover {
@@ -119,11 +138,54 @@ $th-headings: (
     }
   }
 
+  // Basic type alignment
+  .center {
+    text-align: center;
+  }  
+
+  .left {
+    text-align: left;
+  }  
+
+  .right {
+    text-align: center;
+  }
+
+
+  // Special Formatting for Specific Things
+
+  // Titles could be nice a big. Huge headlines, everbody! 
+  .title {
+    @include th-headings(title);
+    font-family: $heading-font-stack;
+  }
+
+  // Subtitles will come in handy
+  .subtitle {
+    display: block;
+    @include th-headings(h5);
+    color: lighten($default-type-color, 30%);
+    margin-top: 0px !important;
+  }
+
+  // Spacers just give you extra space
+  .spacer {
+    margin: 2rem 0;
+  }
+
+  // Default horizontal rule
+  hr {
+    border-top: 1px solid $quiet-type-color;
+    border-bottom: 0;
+    height: 1px;
+  }
 
 } /* .typeset */
 
 
-//Clean Up Margins
+// Clean Up Margins using rems. 
+// This keeps it consistent and prevents giant margins above large headings
+// because rems 
   div[class*="col-"],
   div.typeset,
   div.format { 
@@ -135,17 +197,18 @@ $th-headings: (
     & > ul,
     & > ol,
     & > blockquote,
+    & > hr,
     li + ul,
     h1 + p, h2 + p, h3 + p, h4 + p, img {
 
-      margin-top: $base-type-size;
+      margin-top: 1rem;
       
       @include breakpoint($medium) {
-        margin-top: 1.1em;
+        margin-top: 1.5rem;
       }
       
       @include breakpoint($large) {
-        margin-top: 1.2em;
+        margin-top: 2rem;
       }
     }
   }

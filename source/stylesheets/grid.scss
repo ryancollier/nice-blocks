@@ -36,16 +36,42 @@ $gutter: modular-scale(4, $base-type-size, $ms-ratio-2) !default;
     //border: 1px solid green;
     &:before {
       color: green;
-      content: "Large ( > " + $large + " )";
+      content: "Large (From " + $large + " to " + $xlarge + ")";
+    }
+  }  
+
+  @include breakpoint($xlarge) {
+    //border: 1px solid green;
+    &:before {
+      color: orange;
+      content: "Xtra Large (From " + $xlarge + " to " + $xxlarge + ")";
+      
+    }
+  }  
+
+  @include breakpoint($xxlarge) {
+    //border: 1px solid green;
+    &:before {
+      color: tan;
+      content: "Xtra Xtra Large (> " + $xxlarge + ")";
+      
     }
   }
 }
 
 
+
+img { 
+  width: 100% !important;
+  height: auto !important;
+} 
+
+
 // Measure, that is max width of the content area
 .container {
+  @include outer-container; 
   margin: 0 auto;
-  max-width: 98%;
+  max-width: 96%;
   
   @include breakpoint($medium) {
       max-width: 84%; 
@@ -57,21 +83,15 @@ $gutter: modular-scale(4, $base-type-size, $ms-ratio-2) !default;
   
   @include breakpoint($xlarge) {
     max-width: 68%;
+  }  
+
+  @include breakpoint($xxlarge) {
+    max-width: 58%;
   }
 }
 
 ///
 
-
-img { 
-  width: 100% !important;
-  height: auto !important;
-} 
-
-.container {
-  @include outer-container; 
-
-}
 
 .block {
   @include row();
