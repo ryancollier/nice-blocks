@@ -1,21 +1,2 @@
-// Top-Level SCSS
-@import "variables";
+// Top-level SCSS
 
-// Do some stuff only in the block library context
-body.blocks {
-	
-	.block {
-		border: 1px dotted #ccc;
-		margin-bottom: 5rem;
-		padding: .5rem;
-	}
-
-	.spacer {
-    	&:before {
-    		content: "Spacer";
-      		color: $quiet-type-color;
-      		font-style: italic;
-    	}
-  	}
-
-}
