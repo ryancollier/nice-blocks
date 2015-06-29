@@ -67,11 +67,12 @@ img {
 } 
 
 
-// Measure, that is max width of the content area
+// Don't give the container any margin or padding so that we can easily create full-width blocks.
 .container {
   @include outer-container; 
   margin: 0 auto;
 	max-width: none;
+	// Give normal blocks a max-width set to the percentage of the screen width. Center them.
 	.block {
 		margin-left: auto;
 		margin-right: auto;
@@ -87,16 +88,6 @@ img {
 		}  
 		@include breakpoint($xxlarge) {
 			max-width: 58%;
-		}
-	}
-	.block.hero {
-		max-width: none;
-		padding: 0;
-		width: 100%;
-		.bgimage {
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
 		}
 	}
 }
