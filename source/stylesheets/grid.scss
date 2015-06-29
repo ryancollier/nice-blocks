@@ -78,14 +78,14 @@ img {
 		margin-right: auto;
 		max-width: 96%;	
 		@include breakpoint($medium) {
-      max-width: 84%; 
-		}		
+			max-width: 84%;
+		}
 		@include breakpoint($large) {
 			max-width: 76%;
 		}  		
 		@include breakpoint($xlarge) {
 			max-width: 68%;
-		}  
+		}
 		@include breakpoint($xxlarge) {
 			max-width: 58%;
 		}
