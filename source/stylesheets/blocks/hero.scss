@@ -1,0 +1,29 @@
+@import "variables";
+
+// Hero Block Styling 
+// TODO: A lot of this could be put into a more general blocks.scss, such as nested block behavior.
+.container {	
+	.block.hero {
+		// Hero blocks take up the full width
+		max-width: none;
+		padding: 0;
+		width: 100%;
+		.bgimage {
+			// Basic Background Styling
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			// Provide top and bottom padding for the overlay block
+			padding: 10% 0;
+			.block.overlay {
+				// This should be a variable dependant on the text color.
+				background: $default-overlay-color;
+				// Nested blocks shouldn't have additional bottom margin.
+				margin-bottom: 0;
+				h1 {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
