@@ -1,0 +1,203 @@
+<div class="block typeset">
+
+	<div class="layout">
+
+		<div class="col-12">
+			
+			<div style="width: 100%; height: 400px; background: #ddd;">
+						
+				 
+				  <label for="modal-1">
+				    <div class="modal-trigger">
+              <span class="button">Insert ...</span>
+            </div>
+				  </label>
+
+
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+</div>	
+
+
+<div class="modal">
+
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-1"></div>
+      
+      <!-- <a href="#" class="prev">Back</a>
+      <a href="#" class="next">Fwd</a>
+      <a href="#" class="dismiss" for="modal-1">Close</a> -->
+
+      <div id="step1" class="modal-content current first">
+      
+        <h1>Select Data or Media Provider</h1>
+
+      		<ul>
+      			<li><a href="#" id="youTube" class="next">YouTube</a></li>
+      		</ul>
+
+      </div>
+
+      <div id="step2" class="modal-content">
+
+        
+
+          <h1>Add a YouTube Video</h1>
+
+          <div class="youTube form">
+            
+            <div class="video-form-wrapper">
+            <form>
+              <label>Link to Video 
+                <span class="error"> This must be a valid YouTube link.</span>  
+                <span class="valid"> <span class="icon-checkmark3"></span></span>  
+              </label>
+              <input type="text" id="vidLink" placeholder="http://www.youtube.be">
+              
+              
+              <span class="preview-video cancel"></span>
+              <a href="#" id="vidPrev" class="preview-video button">Preview</a>
+
+
+              <div class="videoWrapper"><iframe width="1280" height="720" src="https://www.youtube.com/embed/hGlyFc79BUE?rel=0" frameborder="0" allowfullscreen></iframe></div>
+
+            </form>
+          </div>
+          </div>
+
+          <div style="text-align: right; margin-top: 1rem;">
+            <a href="#" class="btn prev"><span class="icon-arrow-left2" style="font-size: 0.8em;"></span>Back</a>
+            <a href="#" id="insertVid" class="dismiss btn">Insert</a>  
+          </div>
+
+      </div>
+
+      <div id="step3" class="modal-content last">
+
+            <p>Third</p>
+
+      </div>
+
+    
+    </div>
+  </div>
+</div>	
+
+
+
+<% content_for :page_js do %>
+
+<style>
+  #step2, #step3, .error, .valid, .videoWrapper {
+    display: none;
+  }
+  .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+
+<script>
+
+$(function() {
+  $("#modal-1").on("change", function() {
+    if ($(this).is(":checked")) {
+      $("body").addClass("modal-open");
+    } else {
+      $("body").removeClass("modal-open");
+    }
+  });
+
+  $(".modal-fade-screen, .modal-close").on("click", function() {
+    $(".modal-state:checked").prop("checked", false).change();
+  });
+
+  $(".modal-inner").on("click", function(e) {
+    e.stopPropagation();
+  });
+
+
+  // Steps
+  $('.next').on('click', function() {
+      $('.current').removeClass('current').hide()
+          .next().show().addClass('current');
+      if ($('.current').hasClass('last')) {
+          $('.next').attr('disabled', true);
+      }
+      //$('#prev').attr('disabled', null);
+  });
+
+  $('.prev').on('click', function() {
+      $('.current').removeClass('current').hide()
+          .prev().show().addClass('current');
+      if ($('.current').hasClass('first')) {
+          $('.prev').attr('disabled', true);
+      }
+      $('.next').attr('disabled', null);
+  });
+
+  //Dismiss
+  $('.dismiss').on("click", function() {
+    $(".modal-state:checked").prop("checked", false).change();
+  });
+
+  // Enable the next button with a proper youtube link
+  
+  setTimeout(function(){
+    $('.youTube.form #vidLink').on('input propertychange', function(){
+
+          if ($(this).val() == 'youtube' ) {
+             $('#vidPrev').attr('disabled', null);
+             $('.youTube.form .error').hide();
+             $('.youTube.form .valid').show();
+          }
+
+          else {
+              $('.youTube.form .error').show();
+              $('.videoWrapper').hide();
+            
+          }
+
+    })
+  }, 3000);
+
+  $('#vidPrev').on('click', function(){
+     $('.videoWrapper').show();
+  })
+
+  $('.preview-video.cancel').on('click', function(){
+      $('#vidLink').val("");
+      $('.videoWrapper').hide();
+      $('.error, .valid').hide();
+  })
+/*  $('div.youTube.form').hide();
+
+  $('a#youTube').on('click', function(e){
+
+      $('div.youTube.form').slideToggle();
+    })*/
+
+});
+
+</script>
+
+
+<% end %>

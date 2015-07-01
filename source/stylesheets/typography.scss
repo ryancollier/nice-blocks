@@ -67,11 +67,16 @@ $th-headings: (
   )
 );
 
+//TEMP
+
+///
+
 
 .typeset {  // .typeset class sets overall typography on a block. Add that class to any block with typsetting.
 
   font-size: $base-type-size;
   color: $default-type-color;
+
 
   // This iterates through headings and applies their th-heading values for each
   // Essentailly h(n) { @include th-headings(h(n)) }
@@ -119,6 +124,10 @@ $th-headings: (
   // Left align lists
   ul, ol {
       padding-left: 1.3rem;
+  }
+
+  ul {
+    list-style-type: disc;
   }
 
   // List items are often long, so set set them apart by 1/2 the line height

@@ -13,10 +13,32 @@
     <title><%= current_page.data.title || "The Middleman" %></title>
 
     <%= stylesheet_link_tag "normalize", "all", "grid", "typography" %>
+    
+    <%= javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.js" %>
+  
     <%= javascript_include_tag  "all" %>
+
+    <% if content_for?(:page_js) %>  
+        <%= yield_content :page_js %>
+    <% end %>
+  
   </head>
 
   <body class="<%= page_classes %>">
-    <%= yield %>
+
+
+    <%= partial '/app-bar' %>  
+
+
+        <%= yield %>
+
+    
+    <%= partial 'panels/add-content' %>
+
+    <%= partial 'panels/styles' %>
+
+    <%= partial 'panels/settings' %>
+  
+
   </body>
 </html>
