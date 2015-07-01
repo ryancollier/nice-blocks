@@ -10,6 +10,16 @@
 @import "breakpoint";
 @import "type-heading";
 
+
+// :: //= Import Theme Settings =// :: //
+
+@import "theme-default";
+//@import "other-style";
+
+
+// END Theme Settings //
+
+
 $breakpoint-to-ems: true;
 
 

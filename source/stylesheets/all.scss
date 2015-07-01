@@ -282,6 +282,27 @@ body {
 		cursor: pointer;
 	}
 
+// Style Menu
+
+  &.style-menu {
+
+    .block.sample {
+      height: 160px;
+      zoom: 1;
+
+      &.current {
+        border: 2px solid $orange;
+      }
+    
+      img {
+        width: auto !important;
+      }
+
+    }
+
+  }
+
+
 // Tweaks for Settings Menu
 	&.settings-menu {
 		@include position(fixed, 0px -480px 0px);
