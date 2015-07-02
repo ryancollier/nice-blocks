@@ -8,6 +8,8 @@ $(document).ready(function() {
     $('.' + $(this).attr("data-panel-name") + '.sliding-panel-content').toggleClass('is-visible');
     console.log($(this).attr('class'));	
 
+    $("body").toggleClass("overlay-is-visible");
+
     //$('li.nav-link a.active').removeClass("active");
     //$(this).toggleClass("active");
 
@@ -43,7 +45,8 @@ $(document).ready(function() {
     e.preventDefault();
 
   });
-   
+
+ 
 });
 
 

@@ -242,7 +242,8 @@ body {
   @include transition(all 0.25s ease-in);
   background: #eee;
   z-index: 999999;
-  overflow-y: auto;
+  // Remove to make header stick
+  //overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
   ul {
@@ -282,6 +283,29 @@ body {
 		cursor: pointer;
 	}
 
+
+  .panel-header {
+    position: absolute;
+    border-bottom: 1px solid $light-gray;
+    width: 96%;
+    //background-color: aliceblue; 
+
+    h4 {
+      text-align: center;
+    }
+
+  }
+
+  .panel-body {
+    margin-top: 3.5rem;
+    overflow-y: scroll;
+    margin-bottom: 4.5rem;
+    height: 100%;
+
+
+  }
+
+
 // Style Menu
 
   &.style-menu {
@@ -301,6 +325,8 @@ body {
     }
 
   }
+
+
 
 
 // Tweaks for Settings Menu
