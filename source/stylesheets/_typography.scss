@@ -1,36 +1,24 @@
-// Vars
-@import "variables";
+@import "breakpoint";
+@import "type-heading";
 
+$breakpoint-to-ems: true;
 
 // Import type tools -- 
 // Modular Scale: http://www.modularscale.com/  & https://github.com/modularscale/modularscale-sass
 // Breakpoint: https://github.com/at-import/breakpoint
 // Type-Heading: https://github.com/ellioseven/type-heading
 @import "modular-scale";
-@import "breakpoint";
-@import "type-heading";
-
-
-// :: //= Import Theme Settings =// :: //
-
-@import "theme-default";
-//@import "other-style";
-
-
-// END Theme Settings //
-
-
-$breakpoint-to-ems: true;
-
 
 // Modular Scale settings
 $ms-base: $base-type-size;
 $ms-ratio: $ms-ratio-1, $ms-ratio-2, $ms-ratio-3;
 
 
+
 // Heading size map. 
 // Configured as: font-size line-height (margin-top margin-bottom) breakpoint
 // See http://ellioseven.github.io/type-heading/user-guide/#configure-type-heading
+
 
 $th-headings: (  
   title: (
@@ -40,7 +28,7 @@ $th-headings: (
     ),
 
   h1: (
-    ms(6) $ms-ratio-1 (ms(6)/$ms-ratio-1 0px),
+    ms(7) $ms-ratio-1 (ms(6)/$ms-ratio-1 0px),
     ms(8) $ms-ratio-2 (ms(8)/$ms-ratio-1 0px) $medium,
     ms(11) $ms-ratio-2 (ms(11)/$ms-ratio-2 0px) $large
     ),
@@ -77,16 +65,13 @@ $th-headings: (
   )
 );
 
-//TEMP
-
-///
 
 
 .typeset {  // .typeset class sets overall typography on a block. Add that class to any block with typsetting.
 
   font-size: $base-type-size;
   color: $default-type-color;
-
+  font-size-adjust: 0.5;
 
   // This iterates through headings and applies their th-heading values for each
   // Essentailly h(n) { @include th-headings(h(n)) }
@@ -104,22 +89,22 @@ $th-headings: (
 
   // Set the primary type face and vertical rhythm
   p, ul, ol, blockquote, figcaption {
+    font-size: $std-type-size;
+    line-height: $std-line-height;
+    margin-bottom: $ms-ratio-1 + em;
+    margin-top: $ms-ratio-1 + em;
+    font-family: $body-font-stack;   
 
-    font-size: $base-type-size;
-    font-family: $body-font-stack;  
-    line-height: $ms-ratio-1;
-    margin-bottom: $ms-ratio-1;
-    margin-top: $ms-ratio-1;
-     
       @include breakpoint($medium) {
-        font-size: 1.1em;
-        line-height: $ms-ratio-2;
-        margin-bottom: $ms-ratio-2;
-        margin-top: $ms-ratio-2;
+        font-size: $lg-type-size;
+        line-height: $lg-line-height;
+        margin-bottom: $ms-ratio-2 + em;
+        margin-top: $ms-ratio-2 + em;
       }
 
       @include breakpoint($large) {
-        font-size: 1.2em;
+        font-size: $lg-type-size;;
+        line-height: $lg-line-height;
       }
   }
 
@@ -140,6 +125,10 @@ $th-headings: (
     list-style-type: disc;
   }
 
+  ol {
+    list-style-type: decimal;
+  }
+
   // List items are often long, so set set them apart by 1/2 the line height
   li {
     margin-bottom: $ms-ratio-1*.5 + em;
@@ -152,6 +141,7 @@ $th-headings: (
   // In text hyperlinks
   a {
     color: $link-color;
+    text-decoration: underline;
     &:hover {
       color: $link-hover;
     }

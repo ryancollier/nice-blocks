@@ -1,0 +1,78 @@
+//Theme Vars
+
+// Basic media queries for typeset regions.
+$medium: 	768px;
+$large: 	1200px;
+$xlarge: 	1400px;
+$xxlarge: 	1600px;
+
+
+// Modular Scale Ratios -- 
+// Used for grid and typography. Setting type dimensions using these scales improves balance of the typographic design.
+$ms-ratio-1: 1.333; 
+$ms-ratio-2: 1.44; 
+$ms-ratio-3: 1.54;
+$ms-ratio-4: 1.618; 
+
+// Base Typesize. Used as base calculation for modular scale.
+$base-type-size: 1em;
+$base-line-height: $ms-ratio-3;
+
+
+
+// Import type tools -- 
+// Modular Scale: http://www.modularscale.com/  & https://github.com/modularscale/modularscale-sass
+// Breakpoint: https://github.com/at-import/breakpoint
+// Type-Heading: https://github.com/ellioseven/type-heading
+@import "modular-scale";
+
+// Modular Scale settings
+$ms-base: $base-type-size;
+$ms-ratio: $ms-ratio-1, $ms-ratio-2, $ms-ratio-3;
+
+@import "breakpoint";
+@import "type-heading";
+
+
+// :: //= Import Theme Settings =// :: //
+
+@import "theme-default";
+//@import "other-style";
+
+// Standard (mobile, tablet, and small device) type sie.
+$std-type-size: 1.1em;
+$std-line-height: $ms-ratio-2;
+
+
+// Large Screeen Typesize. 
+$lg-type-size: 1.2em;
+$lg-line-height: $ms-ratio-4;
+
+
+// Font Stacks
+/* $body-font-stack: "Georgia", sans-serif;
+$heading-font-stack: "Helvetica", serif; */
+
+
+/* $body-font-stack: 'Noto Sans', sans-serif;
+$heading-font-stack: 'Radley', serif; */
+
+$body-font-stack: 'Open Sans', sans-serif;
+$heading-font-stack: 'Roboto Slab', serif;
+
+
+
+//Colors // Need to scrub and rework
+$default-type-color: #252525;
+$heading-type-color: #252525;
+$quiet-type-color: #ccc;
+
+
+$link-color: green;
+$link-hover: darken($link-color, 12%);
+$link-hover: darken($link-color, 12%);
+
+// END Theme Settings //
+
+
+$breakpoint-to-ems: true;
