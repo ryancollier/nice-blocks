@@ -1,6 +1,12 @@
 // Stuff for displaying blocks
 @import "variables";
 
+.chooser {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
 // Do some stuff only in the block library context
 body.blocks {
 	

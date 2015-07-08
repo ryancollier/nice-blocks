@@ -19,9 +19,9 @@
 		</div>
 
 
-		<div class="block sample switch current" data-theme-id="theme-default"><img src="/images/themes/theme-default-thumb.jpg"></div>
+		<div class="block sample switch current" data-theme-id="theme-classic"><img src="/images/themes/theme-default-thumb.jpg"></div>
 
-		<div class="block sample switch" data-theme-id="theme-other"><img src="/images/themes/theme-other-thumb.jpg"></div></div>
+		<div class="block sample switch" data-theme-id="theme-sans"><img src="/images/themes/theme-other-thumb.jpg"></div></div>
 
 	</div>
 
@@ -30,4 +30,27 @@
 </div>
 
 			
+<% content_for :page_js do %>
+
+
+
+<script>
+
+$(function() {
+	$(".block.sample.switch").on("click", function(e){
+		
+		//console.log($(this).attr('data-theme-id'));
+		$('link#theme').attr('href', '/stylesheets/' + $(this).attr('data-theme-id') + '.css');
+		
+		$('.block.sample').removeClass('current');
+		$(this).toggleClass('current');
+
+		//$("body").toggleClass("style2");
+	})
+});
+
+</script>
+
+
+<% end %>
 

@@ -16,20 +16,7 @@ $ms-ratio-3: 1.54;
 
 // Base Typesize. Used for grid and typography.
 $base-type-size: 1em;
+$base-line-height: 1.44;
 
 
-// Font Stacks
-$body-font-stack: "Georgia", sans-serif;
-$heading-font-stack: "Helvetica", serif;
-
-
-//
-//Colors // Need to scrub and rework
-$default-type-color: #252525;
-$heading-type-color: #252525;
 $quiet-type-color: #ccc;
-
-
-$link-color: green;
-$link-hover: darken($link-color, 12%);
-$link-hover: darken($link-color, 12%);
