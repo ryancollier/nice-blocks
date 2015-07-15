@@ -9,7 +9,7 @@
 // Common Button Style Rules
 @mixin button_common_styling {
   font: inherit;
-  padding: 5px 7px;
+  padding: 7px 14px;
   border-radius: 2px;
   border: none;
   display: inline-block;
@@ -28,7 +28,7 @@
 // ====================
 // Usage: @include button_flat_stye($background-color, $color)
 
-@mixin button_flat_style ($background-color: #fff, $color: #333) {
+@mixin button_flat_style ($background-color: #fff, $color: #4A4A4A) {
 
   @include button_common_styling();
 
@@ -38,13 +38,27 @@
   @include transition(all, 0.1s);
 
   &:hover:not(:disabled) {
-    background: darken($background-color, 5%);
+    background: darken($background-color, 10%);
+    color: $color;
   }
 
   &:active:not(:disabled) {
     box-shadow: inset 0px 2px 5px 1px rgba(0,0,0,0.3);
   }
 }
+
+
+
+.btn {
+  @include button_flat_style($background-color: $default-gray, $color: #4A4A4A);
+
+  &.btn-primary {
+    @include button_flat_style($background-color: $primary, $color: #fff);
+  }
+
+}
+
+
 
 ///
 
@@ -207,8 +221,8 @@ body {
   li.nav-link {
   	& a {
 	    display: inline-block;
-	    color: $link-color;
-	    padding: 5px;
+	    //color: $link-color;
+	    //padding: 5px;
 
 	}
 
@@ -217,7 +231,7 @@ body {
 			font-size: .88em;
 		}
 	  
-    &.active {
+    &.active, &:active, &:hover, &:focus {
       @include button_flat_style();
     }
   }
@@ -477,7 +491,7 @@ body {
     position: relative;
     @include transition(all 500ms);
     &:hover {
-      background:rgba(0, 0, 0, 0.5);
+      background:rgba(0, 0, 0, 0.3);
       border: 2px solid #888;
     }  
 
@@ -490,7 +504,7 @@ body {
 
 
       span.button {
-        @include button_flat_style($background-color: $green, $color: #fff); 
+        @include button_flat_style($background-color: $primary, $color: #fff); 
         &:hover {
           cursor: pointer;
         }
@@ -560,7 +574,7 @@ body {
 
 
         span.button {
-          @include button_flat_style($background-color: $green, $color: #fff); 
+          @include button_flat_style($background-color: $primary, $color: #fff); 
           &:hover {
             cursor: pointer;
           }
@@ -572,10 +586,6 @@ body {
   }
 }
 
-
-.modal .btn {
-  @include button_flat_style($background-color: #ddd, $color: #222);
-}
 
 .youTube.form {
   background-color: $extra-light-gray;
@@ -685,7 +695,7 @@ body {
   .modal-trigger {
     padding: 0.8em 1em;
     span.button {
-      @include button($green);
+      @include button($primary);
       &:hover {
         cursor: pointer;
       }
@@ -718,24 +728,8 @@ body {
     background: $modal-background;
     cursor: pointer;
 
-    &:after,
-    &:before {
-      @include position(absolute, 3px 3px 0 50%);
-      @include transform(rotate(45deg));
-      @include size(0.15em 1.5em);
-      background: $modal-close-color;
-      content: '';
-      display: block;
-      margin: -3px 0 0 -1px;
-    }
-
-    &:hover:after,
-    &:hover:before {
-      background: darken($modal-close-color, 10%);
-    }
-
-    &:before {
-      @include transform(rotate(-45deg));
+   &:hover {
+      color: lighten($base-font-color, 30%);
     }
   }
 
