@@ -208,7 +208,9 @@ $th-headings: (
     & > blockquote,
     & > hr,
     li + ul,
-    h1 + p, h2 + p, h3 + p, h4 + p, img {
+    h1 + p, h2 + p, h3 + p, h4 + p, img,
+    // also add space above a media-block placeholder as if it were an image because it will be
+    .media-block {
 
       margin-top: 1rem;
       

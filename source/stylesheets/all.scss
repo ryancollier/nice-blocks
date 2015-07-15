@@ -146,6 +146,7 @@ body {
     @include clearfix;
     position: fixed;
     width: 100%;
+    z-index: 5000;
     background: $appbar-background;
     
   }
@@ -460,18 +461,114 @@ body {
 
 // Media Block
 
+.media-block {
 
-.modal-trigger {
-  margin: 0 auto;
-  height: 400px;
-  text-align: center;
-  span.button {
-    
-    @include button_flat_style($background-color: $green, $color: #fff); 
-    margin-top: 160px;
+  width: 100%;
+  background: url('/blocks/placeholders/media-block-icon.png') center center no-repeat;
+  background-size: 20%;
+
+
+
+  & .placeholder {
+    border: 2px dashed #444;
+    margin: 1% auto;
+    overflow: hidden;
+    min-height: 400px;
+    position: relative;
+    @include transition(all 500ms);
     &:hover {
-      cursor: pointer;
+      background:rgba(0, 0, 0, 0.5);
+      border: 2px solid #888;
+    }  
+
+    .modal-trigger {
+      margin: 0 auto;
+      text-align: center;
+      position: absolute;
+      bottom: 12%;
+      width: 100%;
+
+
+      span.button {
+        @include button_flat_style($background-color: $green, $color: #fff); 
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
+
+  }
+}
+
+
+.videoWrapper {
+
+  .videoMessage .h6 {
+    margin-top: 2em;
+  }
+  
+  &.preview {
+    border: 1px solid #ccc;
+    background: #fff url('/blocks/placeholders/video-preview-icon.png') center center no-repeat;
+    background-size: 20%;
+
+    .videoMessage .h6 {
+      color: #666;
+      font-style: italic;
+      margin-top: 4em;
+    }
+  }
+
+  &.error {
+    border: 1px solid #ccc;
+    background: #fff url('/blocks/placeholders/video-error-icon.png') center center no-repeat;
+    background-size: 20%;
+
+    .videoMessage .h6 {
+      font-style: italic;
+    }
+    
+    .now-what {
+      margin-top: 10em;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+
+  &.edit {
+    @include transition(all 500ms);
+  }
+  &.edit:hover {
+
+
+    #overlay {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.6);
+      z-index:50000;
+      color:#fff;
+
+      .modal-trigger {
+        margin: 0 auto;
+        text-align: center;
+        position: absolute;
+        bottom: 12%;
+        width: 100%;
+
+
+        span.button {
+          @include button_flat_style($background-color: $green, $color: #fff); 
+          &:hover {
+            cursor: pointer;
+          }
+        }
+     }
+    }
+
+
   }
 }
 
@@ -489,16 +586,6 @@ body {
   
   label {
     color: $dark-gray;
-  }
-
-  .error {
-    color: $orange;
-    font-weight: normal;
-    font-size: 1em;
-    font-style: italic;
-  }
-  .valid {
-    color: $green;
   }
 }
 
@@ -610,13 +697,13 @@ body {
     @include position(fixed, 0);
     background-color: rgba(#000, 0.65);
     opacity: 0;
-    padding-top: 0.6em;
+    padding-top: 1em;
     text-align: left;
     visibility: hidden;
     z-index: 99999999999;
 
     @include media($large-screen) {
-      padding-top: 10em;
+      padding-top: 2em;
     }
 
     .modal-bg {
@@ -658,27 +745,25 @@ body {
     border-radius: $base-border-radius;
     margin-top: 0;
     margin: auto;
-    max-height: 95%;
+    min-height: 320px;
+    max-height: 80%;
     overflow: auto;
     padding: $modal-padding / 2;
     position: relative;
-    width: 95%;
+    width: 600px;
 
     @include media($medium-screen) {
       max-height: 80%;
-      padding: $modal-padding;
-      width: 83%;
+      padding: $modal-padding /2;
+      width: 680px
     }
 
     @include media($large-screen) {
-      width: 60%;
+      width: 680px;
     }
 
     h1 {
       color: $base-font-color;
-      margin-bottom: 0 0 0.6em 0;
-      text-align: left;
-      text-transform: capitalize;
     }
 
     p {
