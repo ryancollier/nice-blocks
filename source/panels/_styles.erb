@@ -15,13 +15,16 @@
 	
 	<div class="block-group">
 		
-			
-		</div>
 
 
-		<div class="block sample switch current" data-theme-id="theme-classic"><img src="/images/themes/theme-default-thumb.jpg"></div>
 
-		<div class="block sample switch" data-theme-id="theme-sans"><img src="/images/themes/theme-other-thumb.jpg"></div></div>
+		<div class="block sample switch current" data-theme-id="theme-classic">Classic</div>
+
+		<div class="block sample switch" data-theme-id="theme-sans">Sans</div>
+		
+		<div class="block sample switch" data-theme-id="theme-serif">Serif</div>
+
+		<div class="block sample switch" data-theme-id="theme-slab">Slab</div>
 
 	</div>
 
@@ -32,24 +35,9 @@
 			
 <% content_for :page_js do %>
 
-
-
 <script>
 
-$(function() {
-	$(".block.sample.switch").on("click", function(e){
-		
-		//console.log($(this).attr('data-theme-id'));
-		$('link#theme').attr('href', '/stylesheets/' + $(this).attr('data-theme-id') + '.css');
-		
-		$('.block.sample').removeClass('current');
-		$(this).toggleClass('current');
 
-		//$("body").toggleClass("style2");
-	})
-});
-
-</script>
 
 
 <% end %>
