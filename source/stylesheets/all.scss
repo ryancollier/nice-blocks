@@ -808,10 +808,12 @@ body {
 // Based on code by Diego Eis
 .content-menu {
 	
-	padding: .5rem;
+
+	padding: .5rem .5rem 7rem .5rem;
 
 
 	& .block-group {
+     @include span-columns(12);
 		.block-group-title {
 			text-align: center;
 			border-bottom: 1px solid $light-gray;
@@ -822,8 +824,8 @@ body {
 	& div.block.sample {
 		background: #fff;
 		zoom: 0.15;
-		margin: .5rem 0;
-		padding: 1rem;
+		margin: 1rem 0;
+		padding: 0;
 		cursor: pointer;
 		user-select: none;
 		box-sizing: border-box;

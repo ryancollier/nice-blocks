@@ -141,7 +141,7 @@ $th-headings: (
   // In text hyperlinks
   a {
     color: $link-color;
-    text-decoration: underline;
+    text-decoration: $link-text-decoration;
     &:hover {
       color: $link-hover;
     }
@@ -179,7 +179,7 @@ $th-headings: (
 
   // Spacers just give you extra space
   .spacer {
-    margin: 2rem 0;
+    height: ms(12);
   }
 
   // Default horizontal rule
