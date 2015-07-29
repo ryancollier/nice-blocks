@@ -1,0 +1,129 @@
+-block: title-12
+	-icon: title-12.svg
+	- contents: 
+		-col1: <h1 class="text-center title">Your Great Story Title</h1>
+
+
+-block: text-12
+	-icon: text-12.svg
+	-contents: 
+		-col1: <h1>Heading</h1>
+			<p>This is placeholder text. To get started, remove it and input your own information! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate eu urna sed malesuada. Maecenas placerat dui id nibh malesuada, non eleifend nisl viverra. Ut aliquam urna a turpis condimentum sollicitudin. Duis ut sodales lacus. In malesuada nec lectus in aliquam. Nunc tempus faucibus neque quis imperdiet. Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum.</p>
+
+-block: text-12-mixed-content
+	- icon: text-12-mixed-content.svg
+	- contents:
+		-col1: <h3>Heading</h3>
+			<p>This is placeholder text. To get started, remove it and input your own information! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate eu urna sed malesuada. Maecenas placerat dui id nibh malesuada, non eleifend nisl viverra. Ut aliquam urna a turpis condimentum sollicitudin. Duis ut sodales lacus. In malesuada nec lectus in aliquam. Nunc tempus faucibus neque quis imperdiet.</p>
+
+			<h4>Subheading</h4>
+			<ul>
+				<li>Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum.</li>
+				<li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+				<li>Ut aliquam urna a turpis condimentum sollicitudin. Duis ut sodales lacus. In malesuada nec lectus in aliquam. Nunc tempus faucibus neque quis imperdiet.</li>
+				<li>Vel corporis quia beatae et odio iste aperiam non tenetur.</li>
+			</ul>
+
+
+-block: text-12-blockquote
+	- icon: text-12-blockquote.svg
+	- contents:
+		- col1: <blockquote>&ldquo;This is placeholder text. To get started, remove it and input your own information! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate eu urna sed malesuada. Maecenas placerat dui id nibh malesuada, non eleifend nisl viverra. Ut aliquam urna a turpis condimentum sollicitudin. Duis ut sodales lacus. In malesuada nec lectus in aliquam. Mauris laoreet est turpis, vel rhoncus felis suscipit ut. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda.&rdquo;</blockquote>
+
+
+-block: text-6-6
+	-icon: text-6-6.svg
+	- contents:
+		- col1: <h3>First Heading</h3>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+		- col2: <h3>Second Heading</h3>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+
+
+-block: text-8-4
+	- icon: text-8-4.svg
+	- contents: 
+		- col1: <h4>Heading</h4>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+
+		- col2: <h4>Aside Heading</h4>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+
+
+
+-block: text-4-8
+	- icon: text-4-8.svg
+	- contents: 
+		- col1: <h4>Aside Heading</h4>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+		- col2: <h4>Heading</h4>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+
+
+
+-block: text-4-4-4
+	- icon: text-4-4-4.svg
+	- contents:
+		- col1: <h5>First Heading</h5>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+		- col2: <h5>Second Heading</h5>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+		- col3: <h5>Third Heading</h5>
+			<p>This is placeholder text. To get started, remove it and input your own information! Illum quisquam nobis enim earum sed in accusantium qui veniam. Vel corporis quia beatae et odio iste aperiam non tenetur eum voluptate eligendi pariatur voluptatem. Reiciendis veniam in impedit amet voluptate cumque sit laborum. Et ab ipsa temporibus eum ab dolorum. Facilis quia est eum consequatur explicabo odit assumenda. Recusandae rem autem soluta est aut nesciunt cupiditate eligendi quae.</p>
+
+
+
+-block: element-rule
+	- icon: element-rule.svg
+	- contents:
+		-col1: <hr />
+
+-block: element-spacer
+	- icon: element-spacer.svg
+	- contents:
+		-col1: <div class="spacer"></div>
+
+
+-block: media-12
+	-icon: media-12.sng
+	- contents:
+		- col1: media-block
+
+
+-block: media-6-6
+	-icon: media-6-6.svg
+	- contents: 
+		- col1: media-block
+		- col2: media-block
+
+
+-block: media-text-6-6
+	-icon: media-text-6-6.svg
+	- contents:
+		- col1: media-block
+		- col2: <h3>Headline</h2>
+			<p>This is placeholder text. To get started, remove it and input your own information! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed tincidunt, lacus et maximus facilisis, magna sapien pharetra enim, ac luctus nisi tellus id arcu. Cras ultrices risus vitae nibh finibus pulvinar. Maecenas eget orci ac orci commodo egestas eu ac est. Morbi ac porttitor urna, in luctus nisi.</p>
+
+
+-block: text-media-6-6
+	-icon: text-media-6-6.svg
+	- contents:
+		- col1: <h3>Headline</h2>
+			<p>This is placeholder text. To get started, remove it and input your own information! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed tincidunt, lacus et maximus facilisis, magna sapien pharetra enim, ac luctus nisi tellus id arcu. Cras ultrices risus vitae nibh finibus pulvinar. Maecenas eget orci ac orci commodo egestas eu ac est. Morbi ac porttitor urna, in luctus nisi.</p>
+		- col2: media-block
+
+
+-block: media-text-8-4
+	-icon: media-text-8-4.svg
+	- contents:
+		- col1: media-block
+		- col2: <h2>Headline</h2>
+			<p>This is placeholder text. To get started, remove it and input your own information! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
+-block: text-media-4-8
+	-icon: text-media-4-8.svg
+	- contents:
+		- col1: <h2>Headline</h2>
+			<p>This is placeholder text. To get started, remove it and input your own information! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+		- col2: media-block
