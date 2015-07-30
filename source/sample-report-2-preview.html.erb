@@ -1,0 +1,346 @@
+---
+title: Sample Report Preview
+layout: layout
+---
+
+<script>
+
+      $(document).ready(function() { 	
+          
+          $("header.navigation").slideUp(500);
+          $("#story").css('padding-top', '1em');	
+
+          $('link#theme').attr('href', '/stylesheets/theme-serif.css');
+          
+
+          console.log( "ready!" );
+          $(".block").removeClass("editable");
+          $(".block").addClass("hidden");
+      	  $(".block:first").removeClass("hidden").addClass("current");
+
+      	  $("body").append("<div class='ctrl'><div class='view-switch'><a href='#' id='page-view'><span class='icon-stories-icon'></span></a><br/><br /><div class='view-switch'><a href='#' id='slide-view'><span class='icon-presentation'></span></a></div></div>");
+
+      	   //Slide view mode toggle
+      	   $("#slide-view").on('click', function(){
+      	   		$(this).toggleClass('active');
+      	   		$('body').toggleClass('pres');
+
+      	   		$('hr').css('opacity', '0');
+
+      	   });
+
+
+      	   //Page view mode toggle	
+      	   $("#page-view").on('click', function(){
+      	   		$(this).toggleClass('active');
+      	   		$('body').toggleClass('pres');
+      	   		$('hr').css('opacity', '1');
+      	   })
+
+		});
+
+      $(document).keydown(function(e) {
+	    switch(e.which) {
+	        case 37: // left
+
+	        console.log("left");
+	        $(".block.current").prev().removeClass("hidden").addClass("prev");
+	        $(".block.current").removeClass("current").toggleClass("hidden").removeClass("prev");
+	        $(".block.prev").addClass("current");
+
+
+	        break;
+
+	        case 38: // up
+	        break;
+
+	        case 39: // right
+
+	        console.log("right");
+	        console.log($(".block.current").next(".block").attr("id"));
+	       	
+	       	$(".block.current").next(".block").removeClass("hidden").addClass("next");
+	       	$(".block.current").removeClass("current").toggleClass("hidden").removeClass("next");
+	       	$(".block.next").addClass("current");
+
+	        break;
+
+	        case 40: // down
+	        break;
+
+	        default: return; // exit this handler for other keys
+	    }
+	    e.preventDefault(); // prevent the default action (scroll / move caret)
+	});
+
+     	 
+    </script>
+
+
+<div id="story" class="edit">
+
+	<div class="container">
+
+
+
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="col-12">
+
+					<h1 class="center">Probation: Realignment and Reentry (3230P)</h1>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="col-12">
+
+					<hr />
+
+					<h3>Program Outcome Satatement</h3>
+					<p>Reduce recidivism through collaborative efforts in specialized supervision.</p>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="col-6">
+
+					<h3>Program Services</h3>
+					<ul>
+						<li>Reduce crime among all age groups. a. Reduce crime by creating and implementing a youth and family violence prevention master plan.</li>
+						<li>Encourage citizen participation in neighborhood efforts to reduce crime</li>
+
+						<li>Supervises AB109 realigned offenders</li>
+						<li>Coordinates specialty courts&mdash;Bridges, Pathways, Drug Court and Veteran's Treatment Court</li>
+						<li>Partners with other agencies to assist incarcerated people reenter the community through substance abuse and mental health treatment programs</li>
+						<li>Provides San Mateo County Superior Court with Pretrial recommendations</li>
+					</ul>
+				</div>
+
+				<div class="col-6	">
+						 <%= image_tag '/images/samples/SMC-report-image.jpg' %>
+				</div>
+
+			</div>
+
+		</div>	
+
+
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="col-12">
+
+					<h2>Overview</h2>
+					<p>The Realignment and Reentry Division contributes to the County’s Shared Vision commitment to enhance public safety by reducing crime in our neighborhoods and providing seamless coordinated services to residents. The Division serves the AB 109 Realignment population, the County’s re-entry efforts, the Pretrial unit and other specialized probation supervision programs that include the Bridges Program, Pathways, Drug Court, and the Veteran’s Treatment Court.</p>
+
+					<p>AB 109 Realignment transfers responsibility for supervising inmates convicted of specific low-level crimes and parolees from the State to counties. The key role of Probation under realignment is post-release case management and supervision of these offenders by creating the Post-Release Community Supervision (PRCS) Unit. Included in the PRCS caseload are those released from prison and new, locally sentenced, offenders who are given split sentences referred to as “County Prison” commitments with subsequent Mandatory Supervision (MS). Probation assesses the risk and needs of offenders, links them to appropriate services, and monitors compliance with court conditions.</p>
+
+					<p>Reentry is a County-coordinated program through the partnership of many agencies to assist people incarcerated in the County jail in re-entering their community through substance abuse and mental health treatment. One Probation Officer is assigned to assist those in custody who have a sentence which can be modified to a residential treatment program by finding an appropriate program for them. The Pretrial unit makes recommendations for or against defendants being released on Supervised Own Recognizance to the Court based on Sheriff’s Office interviews and our own verifications. The Bridges Program, Pathways, Drug Court and Veteran’s Treatment are relapse prevention programs. Clients in these programs are referred to one or more community-based treatment programs or to county/federal agencies.</p>
+					
+					
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="block typeset">
+
+			<div class="layout">
+				<div class="spacer"></div>
+				
+
+				<div class="col-8">
+
+
+					<h5>Percent of Offenders Receiving a Split Sentence</h5>
+
+					<%= image_tag '/images/samples/Percent-offenders-receiving-split-sentence.png' %>
+
+
+				</div>			
+
+			</div>
+
+		</div>
+
+
+		
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="spacer"></div>
+
+				<div class="col-8">
+
+					<h5>Percent of Re-entry Offenders Completing Treatment Programs</h5>
+
+					<%= image_tag '/images/samples/Percent-offenders-completing-treatment-programs.png' %>
+
+
+				</div>			
+
+			</div>
+
+		</div>
+
+
+
+		
+		<div class="block typeset">
+
+			<div class="layout">
+
+		<div class="spacer"></div>
+
+
+				<div class="col-8">
+
+					<h5>Percent of Realignment Offenders Without New Felony Law Violations</h5>
+
+					<%= image_tag '/images/samples/Percent-realignment-offenders-wo-new-felony-violations.png' %>
+
+<div class="spacer"></div>
+				</div>			
+
+
+
+			</div>
+				
+
+
+		</div>
+
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="col-12">
+
+					
+
+
+					<h2>Story Behind Performance</h2>
+					<p>The Division works closely with County and community partners to effectively conduct its work. It collaborates with the Health System, Sheriff’s Office, Human Services Agency and community partners to supervise and support the PRCS and MS population. Probation Officers personally escort offenders to the Service Connect office to receive supportive services from the collaborative partners.</p>
+
+
+<p>The high percentage of split sentences and low percentage of new felony law violations in the population is a result of this strong partnership. However, the Division has seen a gradual decrease in the number of split sentences. Anticdotal evidence supports the theory that offenders are requesting and Courts are granting in-custody only time as part of plea deals.</p>
+
+<p>In order to achieve high numbers of placements for modifiable individuals, the Division communicates frequently with substance abuse and mental health providers. This frequent communication facilitates appropriate and swift placements. In FY 2013-14, there was a six week period of staff transition when placements were not centrally recorded As a result, our documented placements are lower than targeted.</p>
+
+<p>The Veteran’s Treatment Court (VTC), and its partners from the Courts, District Attorney’ s Office, Private Defender Program and Health System, earned a Federal grant to expand services. The VTC was able to hire a case manager to support veterans as they navigate the court process.
+</p>
+					
+					
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="block typeset">
+
+			<div class="layout">
+				<div class="col-6">
+
+					<h5>Fiscal Year 2015-17 Department Priorities</h5>
+					<ol>
+						<li>Collaborate with our County and community based partners to provide evidence based intensive supervision and support to high and medium risk AB109 supervisees.</li>
+						<li>Ensure that eligible offenders are placed in appropriate alternatives to custody in a timely manner.</li>
+						<li>Track and measure our outcomes to ensure continued reduction in recidivism.</li>
+					</ol>
+					
+
+				</div>			
+
+				<div class="col-6 last">
+
+					<h5>Fiscal Year 2014-15 Mid-Year Update</h5>
+
+					<p>The Realignment and Reentry division continues its collaboration through the unified reentry plan with Service Connect as well as its work with the specialty collaborative courts. In this Mid-year review, the numbers have been consistent as with FY 2013-14 statistics. It is worth noting that the division as well as the Department as a whole is still evaluating the effects of Proposition 47 to its caseload numbers.
+					</p>		
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="col-12">
+					
+					<h3>About This Report</h3>
+					<p><b>Author</b><br/>
+						Maya J. Perkins, Management Analyst<br/>
+							<a href="#">mperkins@smcgov.org</a></p>
+					<p>Noelle Vergara, Management Analyst<br/>
+						<a href="#">nvergara@smcgov.org</a></p>
+
+<p><b>Date Created</b> 02-24-2014</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+			
+<% content_for :page_js do %>
+
+<script>
+
+$(function() {
+	$(".block.sample.switch").on("click", function(e){
+		
+		 $('link#theme').attr('href', '/stylesheets/' + $(this).attr('data-theme-id') + '.css');
+
+		console.log($(this).attr('data-theme-id'));
+		//$('link#theme').attr('href', '/stylesheets/' + $(this).attr('data-theme-id') + '.css');
+		
+		$('.block.sample').removeClass('current');
+		$(this).toggleClass('current');
+
+		//$("body").toggleClass("style2");
+	})
+});
+
+</script>
+
+</script>
+
+
+<% end %>
+
+
+
