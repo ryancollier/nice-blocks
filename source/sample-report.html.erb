@@ -1,7 +1,58 @@
 ---
-title: Basic App Layout
+title: Sample Report
 layout: layout
 ---
+
+<script>
+
+      $(document).ready(function() { 	
+          console.log( "ready!" );
+          $(".block").removeClass("editable");
+          $(".block").addClass("hidden");
+      	  $(".block:first").removeClass("hidden").addClass("current");
+
+      	   $("body").append("<div class='ctrl'><div class='view-switch'><a href='narrative-test.html'>View as Page</a></div></div>");
+
+
+		});
+
+      $(document).keydown(function(e) {
+	    switch(e.which) {
+	        case 37: // left
+
+	        console.log("left");
+	        $(".block.current").prev().removeClass("hidden").addClass("prev");
+	        $(".block.current").removeClass("current").toggleClass("hidden").removeClass("prev");
+	        $(".block.prev").addClass("current");
+
+
+	        break;
+
+	        case 38: // up
+	        break;
+
+	        case 39: // right
+
+	        console.log("right");
+	        console.log($(".block.current").next(".block").attr("id"));
+	       	
+	       	$(".block.current").next(".block").removeClass("hidden").addClass("next");
+	       	$(".block.current").removeClass("current").toggleClass("hidden").removeClass("next");
+	       	$(".block.next").addClass("current");
+
+	        break;
+
+	        case 40: // down
+	        break;
+
+	        default: return; // exit this handler for other keys
+	    }
+	    e.preventDefault(); // prevent the default action (scroll / move caret)
+	});
+
+     	 
+    </script>
+
 
 <div id="story" class="edit">
 
@@ -16,6 +67,21 @@ layout: layout
 				<div class="col-12">
 
 					<h1 class="center title">What Strategies is Kansas City Using to Reduce Crime?</h1>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="block typeset">
+
+			<div class="layout">
+
+				<div class="col-12">
+
 					<img class="media" src="/images/samples/sample-1.jpg" alt=" "/>
 
 
@@ -45,27 +111,6 @@ layout: layout
 			</div>
 
 		</div>	
-
-	<div class="block typeset">
-
-			<div class="layout">
-
-				<div class="col-4">
-					First
-				</div>
-
-
-				<div class="col-4">
-					Second
-				</div>
-
-				<div class="col-4">
-					Third
-				</div>
-
-			</div>
-
-		</div>		
 
 
 		<div class="block typeset">
