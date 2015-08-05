@@ -19,34 +19,14 @@ $base-type-size: 1em;
 $base-line-height: $ms-ratio-3;
 
 
-
-// Import type tools -- 
-// Modular Scale: http://www.modularscale.com/  & https://github.com/modularscale/modularscale-sass
-// Breakpoint: https://github.com/at-import/breakpoint
-// Type-Heading: https://github.com/ellioseven/type-heading
-@import "modular-scale";
-
-// Modular Scale settings
-$ms-base: $base-type-size;
-$ms-ratio: $ms-ratio-1, $ms-ratio-2, $ms-ratio-3;
-
-@import "breakpoint";
-@import "type-heading";
-
-
 // Standard (mobile, tablet, and small device) type sie.
 $std-type-size: 1.1em;
 $std-line-height: $ms-ratio-2;
 
 
 // Large Screeen Typesize. 
-$lg-type-size: 1.18em;
+$lg-type-size: 1.2em;
 $lg-line-height: $ms-ratio-4;
-
-
-$body-font-stack: 'Open Sans', sans-serif;
-$heading-font-stack: 'Roboto Slab', serif;
-
 
 
 //Colors // Need to scrub and rework
@@ -55,14 +35,46 @@ $heading-type-color: #2c3e50;
 $quiet-type-color: #ccc;
 
 
-$link-color: green;
+// Font Stacks
+$body-font-stack: 'Open Sans', sans-serif;
+$heading-font-stack: 'Roboto Slab', serif;
+
+
+// Hyperlinks
+$link-color: #2c3e50;
 $link-text-decoration: underline;
 $link-hover: darken($link-color, 12%);
 $link-hover: darken($link-color, 12%);
 
 
-// END Theme Settings //
+// Blockquote
+$blockquote-font-style: italic;
+$blockquote-border-left: 2px solid $quiet-type-color;
+$blockquote-padding-left: 1rem;
+$blockquote-margin-left: 1.3rem;
 
+
+// Lists
+$list-padding-left: 1.3rem; 
+$ul-list-style-type: disc;
+$ol-list-styke-type: decimal;
+
+
+// Rule
+$hr-border-top: 1px solid $quiet-type-color;
+
+
+// Styled Elements (implemented in the future)
+
+// - Title (Nice big heading for your story)
+$title-font-family: $heading-font-stack;
+
+// - Subtititle
+$subtitle-font-color: lighten($default-type-color, 30%);
+$subtitle-font-family: $body-font-stack;
+
+
+// END Theme Settings //
 
 $breakpoint-to-ems: true;
 

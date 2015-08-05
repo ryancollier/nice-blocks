@@ -110,23 +110,23 @@ $th-headings: (
 
   // Style the blockquotes
   blockquote {
-    font-style: italic;
-    border-left: 2px solid $quiet-type-color;
-    padding-left: 1rem;
-    margin-left: 1.3rem;
+    font-style: $blockquote-font-style;
+    border-left: $blockquote-border-left;
+    padding-left: $blockquote-padding-left;
+    margin-left: $blockquote-margin-left;
   }
 
   // Left align lists
   ul, ol {
-      padding-left: 1.3rem;
+      padding-left: $list-padding-left;
   }
 
   ul {
-    list-style-type: disc;
+    list-style-type: $ul-list-style-type;
   }
 
   ol {
-    list-style-type: decimal;
+    list-style-type: $ol-list-styke-type;
   }
 
   // List items are often long, so set set them apart by 1/2 the line height
@@ -147,6 +147,9 @@ $th-headings: (
     }
   }
 
+
+  // Special Formatting for Specific Things
+
   // Basic type alignment
   .center {
     text-align: center;
@@ -161,19 +164,18 @@ $th-headings: (
   }
 
 
-  // Special Formatting for Specific Things
-
-  // Titles could be nice a big. Huge headlines, everbody! 
+  // Titles should be nice and big. Huge headlines, everbody! 
   .title {
     @include th-headings(title);
-    font-family: $heading-font-stack;
+    font-family: $title-font-family;
   }
 
   // Subtitles will come in handy
   .subtitle {
     display: block;
     @include th-headings(h5);
-    color: lighten($default-type-color, 30%);
+    color: $subtitle-font-color;
+    font-family: $subtitle-font-family;
     margin-top: 0px !important;
   }
 
@@ -209,7 +211,7 @@ $th-headings: (
     & > hr,
     li + ul,
     h1 + p, h2 + p, h3 + p, h4 + p, img,
-    // also add space above a media-block placeholder as if it were an image because it will be
+    // also add space above a media-block placeholder as if it were an image because it will be and/or it should layout similarly.
     .media-block {
 
       margin-top: 1rem;
