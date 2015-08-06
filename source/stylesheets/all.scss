@@ -31,7 +31,7 @@
 @mixin button_flat_style ($background-color: #fff, $color: #4A4A4A) {
 
   @include button_common_styling();
-
+  font-weight: 600;
   color: $color;
   background: $background-color;
 
@@ -56,8 +56,35 @@
     @include button_flat_style($background-color: $primary, $color: #fff);
   }
 
+  &.btn-full {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
 }
 
+
+// Basic Loader
+
+// Animation
+@include keyframes(spin) {
+  100% { @include transform(rotate(360deg)); }
+}
+
+$spinner-border-size: 3px;
+$spinner-color: #fff;
+
+.loader {
+  font-size: 30px;
+  border: $spinner-border-size solid $spinner-color;
+  border-right-color: lighten($primary, 10%);
+  border-radius: 60%;
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  @include animation(spin .90s linear infinite);
+}
 
 
 ///
@@ -387,7 +414,7 @@ body {
  		}
 
  		input#title {
- 			background-color: #eee;
+ 			background-color: #f9f9f9;
  			color: #666;
  			font-weight: 600;
  			padding-right: 100px;
@@ -396,7 +423,13 @@ body {
  			background-color: #fff;
  			color: #333;
  			}
+
 		}
+
+    textarea#description {
+      height: 100px;
+      background-color: #f9f9f9;
+    }
 
 		.rename-story {
 			position: absolute;

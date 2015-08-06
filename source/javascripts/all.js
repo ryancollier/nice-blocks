@@ -50,6 +50,15 @@ $(document).ready(function() {
 });
 
 
+// Sample Loader
+
+$(document).ready(function() {
+	$('.spinner-example').click(function() {
+		$(this).html('<span class="loader"></span>');
+	});	
+})
+
+
 // Settings Interactions
 
 $(document).ready(function(){
