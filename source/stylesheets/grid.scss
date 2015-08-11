@@ -9,15 +9,15 @@ $visual-grid-color: red;
 $visual-grid-index: front;
 $visual-grid-opacity: 0.1; */
 
-$gutter: modular-scale(4, $base-type-size, $ms-ratio-2) !default;
+$gutter: modular-scale(4, $base-type-size, $ms-ratio-4) !default;
 @import "neat";
 
 //Breakpoint Magic
 @import "breakpoint";
 
-/* 
+
 // Media Query Tester 
-.container {
+/* .container {
   //border: 1px solid red;
   &:before {
     color: red;
@@ -57,7 +57,7 @@ $gutter: modular-scale(4, $base-type-size, $ms-ratio-2) !default;
       
     }
   }
-} */
+} */ 
 
 
 
@@ -73,21 +73,25 @@ img {
   margin: 0 auto;
   max-width: 96%;
   
-  @include breakpoint($medium) {
-      max-width: 84%; 
+  @include breakpoint($medium) {  
+      width: em(960);
+      max-width: 94%; 
   }
-  
+
   @include breakpoint($large) {
-    max-width: 76%;
+    width: em(1140);
+    max-width: 84%
   }  
-  
-  @include breakpoint($xlarge) {
+ 
+// Don't think we need these right now
+
+/*   @include breakpoint($xlarge) {
     max-width: 68%;
   }  
 
   @include breakpoint($xxlarge) {
     max-width: 58%;
-  }
+  } */
 }
 
 ///
