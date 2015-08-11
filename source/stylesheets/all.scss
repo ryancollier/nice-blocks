@@ -366,16 +366,41 @@ body {
 
   &.style-menu {
 
+    h4.block-group-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: $dark-gray;
+      margin: 0 0 0.25em;
+    }
+
+    .section-description {
+      font-style: italic;
+      color: #9B9B9B;
+      font-size: 12px;
+      text-align: center;
+    }
+
     .block.sample {
-      height: 160px;
+      padding: .8rem;
       zoom: 1;
 
+      .theme-title {
+        border-bottom: 1px solid $light-gray;
+        padding-top: .2rem;
+        padding-bottom: .4rem;
+        color: $medium-gray;
+      }
+
+      .theme-sample {
+        width: 96%;
+      }
+
       &.current {
-        border: 2px solid $orange;
+        border: 1px solid $primary;
       }
     
       img {
-        width: auto !important;
+        width: 100% !important;
       }
 
     }
@@ -858,8 +883,8 @@ body {
 	& .block-group {
      @include span-columns(12);
 		.block-group-title {
-			text-align: center;
-			border-bottom: 1px solid $light-gray;
+		
+      text-align: center;
 			padding-bottom: .5rem;
 		}
 	}
