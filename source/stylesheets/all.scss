@@ -342,7 +342,7 @@ body {
 
   .panel-header {
     position: absolute;
-    border-bottom: 1px solid $light-gray;
+    margin-bottom: 2rem;
     width: 96%;
     //background-color: aliceblue; 
 
@@ -353,7 +353,7 @@ body {
   }
 
   .panel-body {
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
     overflow-y: scroll;
     margin-bottom: 4.5rem;
     height: 100%;
@@ -376,7 +376,7 @@ body {
     .section-description {
       font-style: italic;
       color: #9B9B9B;
-      font-size: 12px;
+      font-size: 15px;
       text-align: center;
     }
 
