@@ -69,9 +69,15 @@ $th-headings: (
 
 .typeset {  // .typeset class sets overall typography on a block. Add that class to any block with typsetting.
 
+
   font-size: $base-type-size;
   color: $default-type-color;
   font-size-adjust: 0.5;
+
+
+  // View Styles
+  // ==========================================================================================
+
 
   // This iterates through headings and applies their th-heading values for each
   // Essentailly h(n) { @include th-headings(h(n)) }
@@ -105,6 +111,8 @@ $th-headings: (
       @include breakpoint($large) {
         font-size: $lg-type-size;;
         line-height: $lg-line-height;
+        margin-bottom: $ms-ratio-2 + em;
+        margin-top: $ms-ratio-2 + em;
       }
   }
 
@@ -191,6 +199,168 @@ $th-headings: (
     height: 1px;
   }
 
+
+// Editor Styles
+// ==========================================================================================
+// Styles displayed in editor view  where required to adjust for media queries playing with iframes
+// Ideally, these are used in the editor only?
+// 
+//
+
+// Medium breakpoint class translation
+
+  .small & {
+    
+    // Generate all heading styles for the medium breakpoint
+    @for $index from 1 through 6 {
+      h#{$index} {
+        @include th-heading(
+          $heading: h#{$index}
+        ); 
+      }
+    }
+
+    p, ul, ol, blockquote, figcaption {
+      font-size: $std-type-size;
+      line-height: $std-line-height;
+      margin-bottom: $ms-ratio-1 + em;
+      margin-top: $ms-ratio-1 + em;
+      font-family: $body-font-stack;
+    }
+
+    li {
+      margin-bottom: $ms-ratio-1*.5 + em;
+    }
+
+    .title {
+      @include th-heading($heading: title);
+      font-family: $title-font-family;
+    }
+
+
+    // Clean up margins for editor
+    & > h1:first-child,
+    & > h2:first-child,
+    & > h3:first-child, 
+    & > h4:first-child,
+    & > p,
+    & > ul,
+    & > ol,
+    & > blockquote,
+    & > hr,
+    li + ul,
+    h1 + p, h2 + p, h3 + p, h4 + p, img,
+    // also add space above a media-block placeholder as if it were an image because it will be and/or it should layout similarly.
+    .media-block {
+
+      margin-top: 1rem;
+
+    }
+
+  } // End Small Size 
+
+
+  .medium & {
+
+    // Generate all heading styles for the medium breakpoint
+    @for $index from 1 through 6 {
+      h#{$index} {
+        @include th-heading(
+          $heading: h#{$index},
+          $breakpoint: $medium
+        ); 
+      }
+    }
+
+    p, ul, ol, blockquote, figcaption {
+      font-size: $lg-type-size;
+      line-height: $lg-line-height;
+      margin-bottom: $ms-ratio-2 + em;
+      margin-top: $ms-ratio-2 + em;   
+    }
+
+    li {
+       margin-bottom: $ms-ratio-2*.5 + em;
+    }
+
+    .title {
+      @include th-heading($heading: title, $breakpoint: $medium);
+      font-family: $title-font-family;
+    }
+
+    // Clean up margins for editor
+    & > h1:first-child,
+    & > h2:first-child,
+    & > h3:first-child, 
+    & > h4:first-child,
+    & > p,
+    & > ul,
+    & > ol,
+    & > blockquote,
+    & > hr,
+    li + ul,
+    h1 + p, h2 + p, h3 + p, h4 + p, img,
+    // also add space above a media-block placeholder as if it were an image because it will be and/or it should layout similarly.
+    .media-block {
+
+      margin-top: 1.5rem;
+
+    }
+
+  } // End Medium Size 
+
+
+  .large & {
+
+    // Generate all heading styles for the large breakpoint
+    @for $index from 1 through 6 {
+      h#{$index} {
+        @include th-heading(
+          $heading: h#{$index},
+          $breakpoint: $large
+        ); 
+      }
+    }
+
+
+    p, ul, ol, blockquote, figcaption {
+        font-size: $lg-type-size;;
+        line-height: $lg-line-height;
+        margin-bottom: $ms-ratio-2 + em;
+        margin-top: $ms-ratio-2 + em;
+    }
+
+    li {
+       margin-bottom: $ms-ratio-2*.5 + em;
+    }
+    
+    .title {
+      @include th-heading($heading: title, $breakpoint: $large);
+      font-family: $title-font-family;
+    }
+
+    // Clean up margins for editor
+    & > h1:first-child,
+    & > h2:first-child,
+    & > h3:first-child, 
+    & > h4:first-child,
+    & > p,
+    & > ul,
+    & > ol,
+    & > blockquote,
+    & > hr,
+    li + ul,
+    h1 + p, h2 + p, h3 + p, h4 + p, img,
+    // also add space above a media-block placeholder as if it were an image because it will be and/or it should layout similarly.
+    .media-block {
+
+      margin-top: 2rem;
+
+    }
+
+  } // End Large Size 
+
+
 } /* .typeset */
 
 
@@ -198,8 +368,7 @@ $th-headings: (
 // This keeps it consistent and prevents giant margins above large headings
 // because rems 
   div[class*="col-"],
-  div.typeset,
-  div.format { 
+  div.typeset { 
     & > h1:first-child,
     & > h2:first-child,
     & > h3:first-child, 
@@ -224,7 +393,5 @@ $th-headings: (
         margin-top: 2rem;
       }
     }
-  }
 
-
-
+} // End Cleanup Margins // 
