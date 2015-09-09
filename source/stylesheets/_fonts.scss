@@ -23,6 +23,12 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-next:before {
+	content: "\eddb";
+}
+.icon-arrow-prev:before {
+	content: "\eddf";
+}
 .icon-presentation:before {
 	content: "\e95c";
 }
@@ -97,6 +103,9 @@
 }
 .icon-paragraph-right3:before {
 	content: "\eec0";
+}
+.icon-warning:before {
+	content: "\e604";
 }
 .icon-stories-menu:before {
 	content: "\e603";
