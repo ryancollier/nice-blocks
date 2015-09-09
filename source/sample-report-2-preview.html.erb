@@ -9,7 +9,8 @@ layout: layout
           
           $("header.navigation").slideUp(500);
           $("#story").css('padding-top', '1em');	
-
+          $("body").addClass("view");
+          $(".slideCtrl").fadeOut();
           $('link#theme').attr('href', '/stylesheets/theme-serif.css');
           
 
@@ -18,14 +19,20 @@ layout: layout
           $(".block").addClass("hidden");
       	  $(".block:first").removeClass("hidden").addClass("current");
 
-      	  $("body").append("<div class='ctrl'><div class='view-switch'><a href='#' id='page-view'><span class='icon-stories-icon'></span></a><br/><br /><div class='view-switch'><a href='#' id='slide-view'><span class='icon-presentation'></span></a></div></div>");
+      	  // Add switcher
+      	  $("body").append("<div class='ctrl'><div class='view-switch'><a href='#' id='page-view'><span class='icon-stories-icon'></span></a><a href='#' id='slide-view'><span class='icon-presentation'></span></a></div></div>");
+
+      		
 
       	   //Slide view mode toggle
       	   $("#slide-view").on('click', function(){
       	   		$(this).toggleClass('active');
       	   		$('body').toggleClass('pres');
-
+      	   		$('body').toggleClass('view');
       	   		$('hr').css('opacity', '0');
+          		
+          		$(".slideCtrl").fadeIn();
+
 
       	   });
 
@@ -34,7 +41,9 @@ layout: layout
       	   $("#page-view").on('click', function(){
       	   		$(this).toggleClass('active');
       	   		$('body').toggleClass('pres');
+      	   		$('body').toggleClass('view');
       	   		$('hr').css('opacity', '1');
+      	   		$(".slideCtrl").fadeOut();
       	   })
 
 		});
@@ -311,6 +320,13 @@ layout: layout
 
 </div>
 
+
+<div class='slideCtrl'>
+	<div class="slide-switch">
+	<a href="#" id="prevSlide"><span class='icon-arrow-prev'></span></a>
+	<a href="#" id="prevSlide"><span class='icon-arrow-next'></span></a>
+	</div>
+</div>
 
 			
 <% content_for :page_js do %>

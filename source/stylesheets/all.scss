@@ -912,24 +912,79 @@ body {
 
 
 // Pres Test
-.ctrl {
-  background: #eee;
-  position: fixed;
-  bottom: 5rem;
-  right: 0;
-  padding: 0.46em;
-  background: rgba(0,0,0,0.5);
-  font-size: 21.75px; 
-}
 
-.view-switch {
-  font-size: 0.867em;
+.slideCtrl {
+    position: fixed;
+    bottom: 3rem;
+    right: 2.3rem;
+    background-color: darken($primary, 10%); // #4A4747;
+    padding: 9px 0 8px;
+  
+  //padding: 8px;
+  
+  .slide-switch {
+    line-height: 1;
+    //width: 3.9em;
+    border-radius: 1px;
+    height: 23px;
+  }
+
   a {
+    background: darken($primary, 10%); // #4A4747;
+    font-size: 1.3em;
+    padding: 7px 8px 5px 8px;
     color: #fff;
-    text-decoration: none;
+    border-radius: 1px;
+    &:hover { background: darken($primary, 20%); }
+
   }
 }
 
+
+.ctrl {
+  background: #4A4747;
+  position: fixed;
+  bottom: 3rem;
+  right: -2px;
+  font-size: 21.75px; 
+  border-radius: 1px;
+  
+}
+
+.view-switch {
+  border-radius: 1px;
+  a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 0.4em 0.4em;
+    display: block;
+    line-height: 1;
+
+    &:hover {
+      color: #fff;
+    }
+    
+
+  }
+
+}
+
+body.pres { 
+  a#slide-view {
+    background-color: $primary;
+    color: #fff;
+    border-radius: 1px;
+  }
+  a#page-view {
+    background-color: #4A4747;
+  }
+}
+
+body.view a#page-view {
+    background-color: $primary;
+    color: #fff;
+    border-radius: 1px;
+}
 
 body.sample-report-2-preview.pres {
 
