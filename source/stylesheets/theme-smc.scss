@@ -1,0 +1,95 @@
+//Theme Vars
+
+// Basic media queries for typeset regions.
+$medium: 	768px;
+$large: 	1200px;
+$xlarge: 	1400px;
+$xxlarge: 	1600px;
+
+
+// Modular Scale Ratios -- 
+// Used for grid and typography. Setting type dimensions using these scales improves balance of the typographic design.
+$ms-ratio-1: 1.333; 
+$ms-ratio-2: 1.44; 
+$ms-ratio-3: 1.54;
+$ms-ratio-4: 1.618; 
+
+// Base Typesize. Used as base calculation for modular scale.
+$base-type-size: 1em;
+$base-line-height: $ms-ratio-3;
+
+
+// Standard (mobile, tablet, and small device) type sie.
+$std-type-size: 1.1em;
+$std-line-height: $ms-ratio-2;
+
+
+// Large Screeen Typesize. 
+$lg-type-size: 1.2em;
+$lg-line-height: $ms-ratio-4;
+
+
+//Colors // Need to scrub and rework
+$default-type-color: #31383C;
+$heading-type-color: #056cb6;
+$quiet-type-color: #ccc;
+
+
+// Font Stacks
+
+@font-face {
+  font-family: "Trade Gothic W01 Light";
+  src: url("https://performance.smcgov.org/api/assets/253616F8-547B-46F1-A5EC-337DE6D433D8?#iefix");
+  src: url("https://performance.smcgov.org/api/assets/253616F8-547B-46F1-A5EC-337DE6D433D8?#iefix") format("eot"), url("https://performance.smcgov.org/api/assets/D72DAEE8-5A2F-44BB-AAD4-5FF07B133B92") format("woff"), url("https://performance.smcgov.org/api/assets/AA981A1F-59C0-4880-B60F-79468203BB40") format("truetype"), url("https://performance.smcgov.org/api/assets/D98B859F-C208-4B0E-ADDD-3948FCC0E706#d918b947-5fcb-42e2-8286-a98a801876de") format("svg"); 
+ }
+
+@font-face {
+  font-family: "Trade Gothic W01 Bold";
+  src: url("https://performance.smcgov.org/api/assets/008B1A59-9B5B-4047-9F17-80C378D65618?#iefix");
+  src: url("https://performance.smcgov.org/api/assets/008B1A59-9B5B-4047-9F17-80C378D65618?#iefix") format("eot"), url("https://performance.smcgov.org/api/assets/9EA260D6-9445-437A-9AC6-8D91E2D4DD3B") format("woff"), url("https://performance.smcgov.org/api/assets/D592B17D-8CA1-43C8-A073-86F9BD00E5A4.ttf") format("truetype"), url("https://performance.smcgov.org/api/assets/C92E83FE-42EB-41DA-8F15-F3D1D4D7ECB5#d5153ad4-7c93-4757-9147-640e69ec4801") format("svg"); 
+ }
+
+$body-font-stack: 'Trade Gothic W01 Light', sans-serif;
+$heading-font-stack: 'Trade Gothic W01 Light', serif;
+
+
+// Hyperlinks
+$link-color: #E24816;
+$link-text-decoration: underline;
+$link-hover: darken($link-color, 12%);
+$link-hover: darken($link-color, 12%);
+
+
+// Blockquote
+$blockquote-font-style: italic;
+$blockquote-border-left: 2px solid $quiet-type-color;
+$blockquote-padding-left: 1rem;
+$blockquote-margin-left: 1.3rem;
+
+
+// Lists
+$list-padding-left: 1.3rem; 
+$ul-list-style-type: disc;
+$ol-list-styke-type: decimal;
+
+
+// Rule
+$hr-border-top: 1px solid $quiet-type-color;
+
+
+// Styled Elements (implemented in the future)
+
+// - Title (Nice big heading for your story)
+$title-font-family: $heading-font-stack;
+
+// - Subtititle
+$subtitle-font-color: lighten($default-type-color, 30%);
+$subtitle-font-family: $body-font-stack;
+
+
+// END Theme Settings //
+
+$breakpoint-to-ems: true;
+
+// Import typography
+@import "typography";
